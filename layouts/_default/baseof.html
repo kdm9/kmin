@@ -20,7 +20,7 @@
     </header>
     {{- end }}
 
-    <main id="main" class="main">
+    <main id="main" class="main {{.Params.mainfont|default "sans"}}">
       <div class="content-wrapper">
         <div id="content" class="content">
           {{ block "content" . }}{{ end }}
