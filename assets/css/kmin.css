@@ -19,12 +19,22 @@ body {
   line-height: 1.5;
 }
 
+a, a:link, a:visited {
+  color: blue;
+}
+a:hover, a:active {
+  color: red;
+}
+
 /* header and footer areas */
 .menu { padding: 0; }
 .article-meta, .menu a {
-  text-decoration: none;
   padding: 5px;
   border-radius: 5px;
+}
+.menu a, .articleinlist a {
+  text-decoration: none;
+  color: inherit;
 }
 .menu a {
   background: #eee;
@@ -33,9 +43,14 @@ body {
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  color: #ccc;
+  color: #444444;
 }
-
+.articleinlist {
+  background-color: #eeeeee;
+  margin: 1rem 0 1rem 0;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  border-radius: 1.2em;
+}
 /* code */
 pre {
   border: 1px solid #ddd;
@@ -43,7 +58,7 @@ pre {
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
+code { background: #faeaea; }
 pre code { background: none; }
 
 /* misc elements */
@@ -63,11 +78,4 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
-
-a, a:link, a:visited, {
-  color: inherit;
-}
-a:hover {
-  color: red;
-}
 
