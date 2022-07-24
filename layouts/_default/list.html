@@ -1,0 +1,18 @@
+{{ define "content" }}
+{{if not .IsHome }}
+<h1>{{ .Title | markdownify }}</h1>
+{{ end }}
+
+{{ .Content }}
+
+{{- $pages := where .Pages.ByDate.Reverse ".Params.hidden" "!=" true -}}
+{{- if .IsHome }}{{ $pages = where .Site.RegularPages.ByDate.Reverse ".Params.hidden" "!=" true }}{{- end -}}
+{{- range (where $pages "Section" "!=" "") -}}
+<div class="articleinlist" style="background-color: #eeeeee;  margin: 1rem 0 1rem 0; padding: 0.2rem 0.5rem 0.2rem 0.5rem;">
+<h4><span class="date">{{ .Date.Format .Site.Params.dateFormat }}</span>&emsp;<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h4>
+  {{ if $.Params.listShowSummary | default false }}
+  {{ .Summary }}
+  {{ end }}
+</div>
+{{ end }}
+{{end}}

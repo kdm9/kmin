@@ -1,0 +1,11 @@
+{{- define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end -}}
+
+{{- define "content" }}
+<ul class="terms">
+  {{ range .Data.Terms }}
+  <li>
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})
+  </li>
+  {{ end }}
+</ul>
+{{- end -}}
